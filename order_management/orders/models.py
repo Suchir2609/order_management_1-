@@ -4,11 +4,13 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
+
 class Orders(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     orderer = models.ForeignKey(User, on_delete=models.CASCADE)
+    favourites = models.ManyToManyField(User, related_name='favourite', blank=True )
 
     def __str__(self):
         return self.title

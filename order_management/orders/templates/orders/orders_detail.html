@@ -10,6 +10,11 @@
           <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'orders-delete' object.id%}">Delete</a>
         {% endif %}
       </div>
+      <div id="favourite-section">
+        <a href="{% url 'favourite-add' object.id %}">
+          <i class="btn btn-secondary btn-sm mt-1 mb-1">favourite</i>
+        </a>
+      </div>
       <h2><a class="article-title" href="#">{{ object.title }}</a></h2>
       <p class="article-content">{{ object.content }}</p>
     </div>
